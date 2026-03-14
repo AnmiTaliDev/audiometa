@@ -28,6 +28,9 @@ pub enum Error {
 
     #[error(transparent)]
     Id3TagError(#[from] id3::Error),
+
+    #[error(transparent)]
+    OggTagError(#[from] oggvorbismeta::Error),
 }
 
 pub type Result<T> = std::result::Result<T, Error>;

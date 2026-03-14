@@ -167,6 +167,7 @@ pub trait ToAnyTag: ToAny {
             TagType::Id3v2 => Box::new(Id3v2Tag::from(self.to_anytag())),
             TagType::Mp4 => Box::new(Mp4Tag::from(self.to_anytag())),
             TagType::Flac => Box::new(FlacTag::from(self.to_anytag())),
+            TagType::Ogg => Box::new(OggTag::from(self.to_anytag())),
         }
     }
 }

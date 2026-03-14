@@ -22,11 +22,12 @@ by specialized libraries. **audiometa** is not making additional unnecessary cop
 
 ### Supported Formats
 
-| File Format   | Metadata Format       | backend                                                     |
-|---------------|-----------------------|-------------------------------------------------------------|
-| `mp3`         | id3v2.4               | [**id3**](https://github.com/polyfloyd/rust-id3)            |
-| `m4a/mp4/...` | MPEG-4 audio metadata | [**mp4ameta**](https://github.com/Saecki/rust-mp4ameta)     |
-| `flac`        | Vorbis comment        | [**metaflac**](https://github.com/jameshurst/rust-metaflac) |
+| File Format   | Metadata Format       | backend                                                                    |
+|---------------|-----------------------|----------------------------------------------------------------------------|
+| `mp3`         | id3v2.4               | [**id3**](https://github.com/polyfloyd/rust-id3)                           |
+| `m4a/mp4/...` | MPEG-4 audio metadata | [**mp4ameta**](https://github.com/Saecki/rust-mp4ameta)                    |
+| `flac`        | Vorbis comment        | [**metaflac**](https://github.com/jameshurst/rust-metaflac)                |
+| `ogg/oga`     | Vorbis comment        | [**oggvorbismeta**](https://github.com/HEnquist/lib-rust-oggvorbis-meta)   |
 
 ### Examples
 

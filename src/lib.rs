@@ -164,6 +164,11 @@ impl Tag {
                 t.set_config(self.config);
                 t
             })),
+            TagType::Ogg => Ok(Box::new({
+                let mut t = OggTag::read_from_path(path)?;
+                t.set_config(self.config);
+                t
+            })),
         }
     }
 }
@@ -187,6 +192,14 @@ pub enum TagType {
     ///
     /// - <https://www.wikiwand.com/en/MPEG-4_Part_14>
     Mp4,
+    /// ## Common file extensions
+    ///
+    /// `.ogg, .oga`
+    ///
+    /// ## References
+    ///
+    /// - <https://www.wikiwand.com/en/Ogg_Vorbis>
+    Ogg,
 }
 
 #[rustfmt::skip]
@@ -196,6 +209,7 @@ impl TagType {
                                                      "mp3" => Ok(Self::Id3v2),
             "m4a" | "m4b" | "m4p" | "m4v" | "isom" | "mp4" => Ok(Self::Mp4),
                                                     "flac" => Ok(Self::Flac),
+                                               "ogg" | "oga" => Ok(Self::Ogg),
             p => Err(crate::Error::UnsupportedFormat(p.to_owned())),
         }
     }
